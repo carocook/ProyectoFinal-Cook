@@ -40,7 +40,7 @@ html {
 .scroll-to-nav:hover {
   background-color: #2cc7ae;
   transform: translateY(-3px);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 header {
@@ -50,6 +50,7 @@ header {
   justify-content: space-between;
   padding: 1rem 2rem;
   background-color: #000;
+  z-index: 2000;
 }
 header .logo img {
   height: 70px;
@@ -62,7 +63,7 @@ header .menu-icon {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 10;
+  z-index: 2100;
 }
 header .menu-icon span {
   height: 3px;
@@ -90,23 +91,98 @@ header nav.menu a:hover {
   }
   header nav.menu {
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100vh;
     background-color: #000;
+    opacity: 1;
     display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
   }
   header nav.menu a {
     padding: 1rem 2rem;
     margin: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
   }
-  header #menu-toggle:checked + .menu-icon + nav.menu {
+  header #menu-toggle:checked ~ nav.menu {
     display: flex;
   }
 }
 
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+.home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.5;
+}
+.home .home-title {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 12vh;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  line-height: 1.3;
+}
+@media (max-width: 768px) {
+  .home .home-title {
+    font-size: 2.2rem;
+    margin-top: 10vh;
+  }
+}
+.home .bio {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-width: 800px;
+  margin: 60px auto 0 auto;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+.home .bio p {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.4;
+}
+@media (max-width: 768px) {
+  .home .bio {
+    padding: 30px 20px;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .home {
   position: relative;
   width: 100%;

@@ -38,11 +38,5 @@ Este proyecto es un sitio web moderno y responsivo, desarrollado con SCSS modula
 
 ---
 
-## Instalación y uso
-
-Clonar el repositorio: git clone https://github.com/carocook/Entrega3-Cook.git
-
----
-
 ¡Gracias por visitar este proyecto!
-Desarrollado con ❤️ y SCSS puro.
+Desarrollado con ❤️ by Caro Cook
