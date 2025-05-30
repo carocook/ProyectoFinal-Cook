@@ -1,0 +1,66 @@
+@use "variables";
+
+.clientes {
+  padding: 85px 20px 100px;
+  background-color: variables.$background-dark;
+  text-align: center;
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: transparent;
+    background-image: linear-gradient(
+      90deg,
+      variables.$primary-color,
+      variables.$text-color
+    );
+    background-size: 200% auto;
+    background-position: 0% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: fillText 2s ease forwards;
+
+    @media (max-width: variables.$breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 40px 30px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 50px;
+
+  @media (max-width: variables.$breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: variables.$breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.clientes-grid img {
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  border-radius: 10px;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+}
+
+.clientes-grid img:hover {
+  transform: scale(1.1);
+}

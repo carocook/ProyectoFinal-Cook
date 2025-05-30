@@ -39,7 +39,7 @@
 
 .servicios,
 .nosotros {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   background: variables.$background-dark;
   color: variables.$text-color;
   text-align: center;
@@ -75,7 +75,7 @@
     grid-template-columns: 1fr;
     max-width: 900px;
     margin: 0 auto;
-    gap: 3rem;
+    gap: 2rem;
 
     .card-full {
       @include card-base(2.5rem 2rem, 2rem, 700px);
@@ -105,7 +105,7 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .mini-card {
