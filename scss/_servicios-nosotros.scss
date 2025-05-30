@@ -23,7 +23,17 @@
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: resplandorVerde 0.4s forwards;
+  }
+}
+
+@keyframes resplandorVerde {
+  0% {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(44, 199, 174, 0.6),
+      0 0 50px rgba(44, 199, 174, 0.8);
   }
 }
 
@@ -109,6 +119,20 @@
     max-width: 300px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+  }
+  @keyframes pulsoVerde {
+    0%,
+    100% {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+      box-shadow: 0 6px 18px rgba(44, 199, 174, 0.5),
+        0 0 12px rgba(44, 199, 174, 0.7);
+    }
+  }
+
+  .mini-card {
+    animation: pulsoVerde 3s ease-in-out infinite;
   }
 }
 

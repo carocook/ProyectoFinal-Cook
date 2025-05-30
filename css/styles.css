@@ -39,15 +39,17 @@ html {
 }
 .scroll-to-nav:hover {
   background-color: #2cc7ae;
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   background-color: #000;
-  position: relative;
 }
 header .logo img {
   height: 70px;
@@ -60,7 +62,7 @@ header .menu-icon {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 3;
+  z-index: 10;
 }
 header .menu-icon span {
   height: 3px;
@@ -216,6 +218,14 @@ footer .copyright p {
   margin: 0;
 }
 
+@keyframes resplandorVerde {
+  0% {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), 0 0 20px rgba(44, 199, 174, 0.6), 0 0 50px rgba(44, 199, 174, 0.8);
+  }
+}
 .servicios,
 .nosotros {
   padding: 4rem 2rem;
@@ -259,7 +269,7 @@ footer .copyright p {
 .servicios .cards .card:hover,
 .nosotros .cards .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: resplandorVerde 0.4s forwards;
 }
 
 .servicios .cards {
@@ -302,7 +312,7 @@ footer .copyright p {
 }
 .nosotros .cards .card-full:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: resplandorVerde 0.4s forwards;
 }
 .nosotros .cards .card-group {
   display: grid;
@@ -336,6 +346,17 @@ footer .copyright p {
   max-width: 300px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+}
+@keyframes pulsoVerde {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 6px 18px rgba(44, 199, 174, 0.5), 0 0 12px rgba(44, 199, 174, 0.7);
+  }
+}
+.nosotros .mini-card {
+  animation: pulsoVerde 3s ease-in-out infinite;
 }
 
 .section-title {

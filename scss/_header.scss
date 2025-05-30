@@ -2,12 +2,12 @@
 @use "main";
 
 header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   background-color: variables.$background-dark;
-  position: relative;
 
   .logo img {
     height: 70px;
@@ -24,7 +24,7 @@ header {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 3;
+    z-index: 10;
 
     span {
       height: 3px;
@@ -72,7 +72,6 @@ header {
       }
     }
 
-    // Muestra menú si checkbox está tildado
     #menu-toggle:checked + .menu-icon + nav.menu {
       display: flex;
     }
